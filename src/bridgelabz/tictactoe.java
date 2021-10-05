@@ -1,5 +1,6 @@
 package bridgelabz;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class tictactoe {
@@ -95,11 +96,92 @@ public class tictactoe {
         }
     }
 
+    public static void comLocation() {
+        boolean flag = false;
+        while (true) {
+            Random rand = new Random();
+            computerPos = rand.nextInt(9);
+            switch (computerPos) {
+                case 0:
+                    if (gameArray[0] == ' ') {
+                        gameArray[0] = computerTurn;
+                        flag = true;
+                    }
+                    break;
+
+                case 1:
+                    if (gameArray[1] == ' ') {
+                        gameArray[1] = computerTurn;
+                        flag = true;
+                    }
+                    break;
+
+                case 2:
+                    if (gameArray[2] == ' ') {
+                        gameArray[2] = computerTurn;
+                        flag = true;
+                    }
+                    break;
+
+                case 3:
+                    if (gameArray[3] == ' ') {
+                        gameArray[3] = computerTurn;
+                        flag = true;
+                    }
+                    break;
+
+                case 4:
+                    if (gameArray[4] == ' ') {
+                        gameArray[4] = computerTurn;
+                        flag = true;
+                    }
+                    break;
+
+                case 5:
+                    if (gameArray[5] == ' ') {
+                        gameArray[5] = computerTurn;
+                        flag = true;
+                    }
+                    break;
+
+                case 6:
+                    if (gameArray[6] == ' ') {
+                        gameArray[6] = computerTurn;
+                        flag = true;
+                    }
+                    break;
+
+                case 7:
+                    if (gameArray[7] == ' ') {
+                        gameArray[7] = computerTurn;
+                        flag = true;
+                    }
+                    break;
+
+                case 8:
+                    if (gameArray[8] == ' ') {
+                        gameArray[8] = computerTurn;
+                        flag = true;
+                    }
+                    break;
+
+            }
+            if (flag == true) {
+                break;
+            }
+
+        }
+    }
+
     public static void main(String[] args) {
         ticTacToe();
         userTurn = user(scanner);
         computerTurn = (userTurn == 'X') ? 'O' : 'X';
         showBoard();
         moveLocation();
+        showBoard();
+        comLocation();
+        showBoard();
+
     }
 }
