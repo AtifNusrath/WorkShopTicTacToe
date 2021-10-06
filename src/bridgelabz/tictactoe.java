@@ -1,7 +1,6 @@
 package bridgelabz;
 
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 
 public class tictactoe {
     private static char userTurn;
@@ -32,7 +31,7 @@ public class tictactoe {
     }
 
     public static void moveLocation() {
-        System.out.println("\nSelect the position to in board from range [ 0 - 8 ] :");
+        System.out.print("\nSelect the position in board from range [0 - 8] : ");
         userPos = scanner.nextInt();
 
         switch (userPos) {
@@ -178,10 +177,23 @@ public class tictactoe {
         userTurn = user(scanner);
         computerTurn = (userTurn == 'X') ? 'O' : 'X';
         showBoard();
-        moveLocation();
-        showBoard();
-        comLocation();
-        showBoard();
+        int Toss;
+        int wonToss;
+        System.out.println("Choose\n 0. Heads\n 1. Tails\nEnter you choice [0-1] : ");
+        Toss = scanner.nextInt();
+        Random rand1 = new Random();
+        wonToss = rand1.nextInt(2);
 
+        if (wonToss == Toss) {
+            moveLocation();
+            showBoard();
+            comLocation();
+            showBoard();
+        }else{
+            comLocation();
+            showBoard();
+            moveLocation();
+            showBoard();
+        }
     }
 }
